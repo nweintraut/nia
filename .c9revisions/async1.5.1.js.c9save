@@ -1,0 +1,5 @@
+{"ts":1372524191693,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1372524238534,"patch":[[{"diffs":[[1,"var fs = require('fs');\nfs.readFile('./resource.json', function(error, data){\n    })"]],"start1":0,"start2":0,"length1":0,"length2":84}]],"length":84,"saved":false}
+{"ts":1372524246245,"patch":[[{"diffs":[[0,"ta){"],[-1,"\n    "],[0,"})"]],"start1":73,"start2":73,"length1":11,"length2":6}]],"length":79,"saved":false}
+{"ts":1372524289262,"patch":[[{"diffs":[[0,"resource"],[-1,"."],[1,","],[0,"json', f"]],"start1":39,"start2":39,"length1":17,"length2":17}]],"length":79,"saved":false}
+{"ts":1372524307696,"patch":[[{"diffs":[[0,"ta){"],[1,"\n    console.log(data);\n"],[0,"})"],[1,";"]],"start1":73,"start2":73,"length1":6,"length2":31}]],"length":104,"saved":false}
