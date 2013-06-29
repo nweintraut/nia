@@ -3,6 +3,7 @@ var server  = http.createServer();
 var fs      = require('fs');
 var path    = require('path');
 var mime    = require('mime');
+var chatServer  = require('./lib/chat_server');
 var cache   = {};
 // Cloud9: use 'process.env.PORT' as the port and 'process.env.IP' as the host in your scripts
 process.env.PORT = process.env.PORT? process.env.PORT : "3000";
@@ -54,3 +55,4 @@ server.listen(process.env.PORT, function() {
     console.log('Server running at http://' + process.env.IP + ":" + process.env.PORT + "/");
 });
 
+chatServer.listen(server);
