@@ -1,0 +1,2 @@
+{"ts":1372527718550,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1372527791452,"patch":[[{"diffs":[[1,"{\n    \"name\": \"chatrooms\",\n    \"version\": \"0.0.1\",\n    \"description\": \"Minimalist multiroom chat server\",\n    \"dependencies\": {\n        \"socket.io\": \"*\",\n        \"mime\" : \"*\"\n    }"]],"start1":0,"start2":0,"length1":0,"length2":180}]],"length":180,"saved":false}
