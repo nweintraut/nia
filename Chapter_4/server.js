@@ -1,6 +1,10 @@
 var http    = require('http');
 var server  = http.createServer();
 var url     = require('url');
+var parse   = url.parse;
+var join    = require('path').join;
+var fs      = require('fs');
+var root    = __dirname;
 
 // Cloud9: use 'process.env.PORT' as the port and 'process.env.IP' as the host in your scripts
 process.env.PORT = process.env.PORT? process.env.PORT : "3000";
@@ -22,6 +26,7 @@ server.on('request', function(request, response){
 //    response.end();
 });
 */
+/*
 var items = [];
 server.on('request', function(request, response){
     switch (request.method) {
@@ -57,7 +62,18 @@ server.on('request', function(request, response){
                 response.end('OK\n');
             }
     }
-
+});
+*/
+server.on('request', function(request, response){
+    var sourceUrl = parse(request.url);
+    var path = join(root, sourceUrl.pathname);
+    var stream = fs.createReadStream(path);
+    stream.on('data', function(chunk){
+        response.write(chunk);
+    });
+    stream.on('end', function(){
+       response.end(); 
+    });
 });
 server.listen(process.env.PORT, function() {
     console.log('Server running at http://' + process.env.IP + ":" + process.env.PORT + "/");
