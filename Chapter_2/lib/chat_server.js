@@ -20,7 +20,7 @@ function joinRoom(socket, room) {
     
     var usersInRoom = io.sockets.clients(room);
     if (usersInRoom.length > 1) {
-        var usersInRoomSummary = 'Users current lin ' + room + ': ';
+        var usersInRoomSummary = 'Users currently in [' + room + ']: ';
         for (var index in usersInRoom) {
             var userSocketId = usersInRoom[index].id;
             if(userSocketId != socket.id) {
@@ -32,6 +32,8 @@ function joinRoom(socket, room) {
         }
         usersInRoomSummary += '.';
         socket.emit('message', {text: usersInRoomSummary});
+    } else {
+        socket.emit('message', {text: "You are first in room [" + room + "]"});
     }
 }
 
@@ -95,6 +97,7 @@ exports.listen = function(server) {
         handleNameChangeAttempts(socket, nickNames, namesUsed);
         handleRoomJoining(socket);
         socket.on('rooms', function(){
+//            console.log('Made it to socket.on(rooms)');
            socket.emit('rooms', io.sockets.manager.rooms); 
         });
         handleClientDisconnection(socket, nickNames, namesUsed);
