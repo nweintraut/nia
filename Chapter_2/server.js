@@ -11,7 +11,7 @@ process.env.IP   = process.env.IP? process.env.IP : "127.0.0.1";
 function send404(response){
     response.writeHead(404, {'Content-Type': 'text/plain'});
     response.write('Error 404: resource not found.');
-    response.send();
+    response.end();
 }
 function sendFile(response, filePath, fileContents){
     response.writeHead(200, {'Content-Type': mime.lookup(path.basename(filePath))});
@@ -50,6 +50,7 @@ server.on('request', function(request, response){
    serveStatic(response, cache, absPath);
 });
 
-server.listen(process.env.PORT);
+server.listen(process.env.PORT, function() {
+    console.log('Server running at http://' + process.env.IP + ":" + process.env.PORT + "/");
+});
 
-console.log('Server running at http://' + process.env.IP + ":" + process.env.PORT + "/");
