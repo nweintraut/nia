@@ -68,12 +68,20 @@ server.on('request', function(request, response){
     var sourceUrl = parse(request.url);
     var path = join(root, sourceUrl.pathname);
     var stream = fs.createReadStream(path);
+
+    stream.on('error', function(err){
+        response.statusCode = 500;
+        response.end('Internal Server Error');
+    });
+    stream.pipe(response);    
+    /*
     stream.on('data', function(chunk){
         response.write(chunk);
     });
     stream.on('end', function(){
        response.end(); 
     });
+    */
 });
 server.listen(process.env.PORT, function() {
     console.log('Server running at http://' + process.env.IP + ":" + process.env.PORT + "/");
