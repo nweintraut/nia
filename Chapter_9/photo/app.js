@@ -1,4 +1,4 @@
-
+process.env.TZ = "America/Los_Angeles";
 /**
  * Module dependencies.
  */
@@ -9,6 +9,7 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , photos = require('./routes/photos');
+require('./models/photo');
 
 var app = express();
 
@@ -30,6 +31,8 @@ app.configure('development', function(){
 });
 
 app.get('/', photos.list);
+app.get('/upload', photos.form);
+app.post('/upload', photos.submit(app.get('photos')));
 // app.get('/', routes.index);
 app.get('/users', user.list);
 
