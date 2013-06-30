@@ -54,6 +54,16 @@ function upload(request, response) {
         return;
     }
     var form = new formidable.IncomingForm();
+    form.on('progress', function(bytesReceived, bytesExpected){
+        var percent = Math.floor(bytesReceived / bytesExpected * 100);
+        console.log(percent);
+    });
+    form.parse(request, function(error, fields, files){
+       console.log(fields);
+       console.log(files);
+       response.end('upload complete');
+    });
+    /*
     form.on('field', function(field, value) {
         console.log("Input field name is: [" + field + "], Value is: [" + value + "]");
     });
@@ -65,6 +75,7 @@ function upload(request, response) {
         response.end('upload complete');
     });
     form.parse(request);
+    */
 }
 function isFormData(request){
     var type = request.headers['content-type'] || '';
