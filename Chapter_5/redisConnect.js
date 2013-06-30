@@ -1,8 +1,8 @@
 var redis   = require('redis');
 var redisConfig = require('./redis_config');
 
-function createClient(){
-    var client  = redis.createClient(redisConfig.redisPort, redisConfig.redisHost, {});
+function createClient(options){
+    var client  = redis.createClient(redisConfig.redisPort, redisConfig.redisHost, options);
     client.on('error', function(error){
         console.log("Redis Error: [" + error + "]");
     });
@@ -18,5 +18,5 @@ function createClient(){
     
     
 exports.createClient = createClient;
-exports.client = createClient();
+exports.client = createClient({});
 exports.redis = redis;

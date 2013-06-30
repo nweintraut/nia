@@ -9,3 +9,4 @@
 {"ts":1372554379908,"patch":[[{"diffs":[[0,"ient = c"],[1,"reateC"],[0,"lient"],[1,"()"],[0,";\nexport"]],"start1":629,"start2":629,"length1":21,"length2":29}]],"length":674,"saved":false}
 {"ts":1372554394773,"patch":[[{"diffs":[[0,"    });\n"],[1,"    return client;\n"],[0,"}   \n   "]],"start1":574,"start2":574,"length1":16,"length2":35}]],"length":693,"saved":false}
 {"contributors":[],"silentsave":false,"ts":1372554538370,"patch":[[{"diffs":[[0,"teClient"],[1," = createClient"],[0,";\nexport"]],"start1":628,"start2":628,"length1":16,"length2":31}]],"length":708,"saved":false}
+{"ts":1372625645715,"patch":[[{"diffs":[[0,"eClient("],[1,"options"],[0,"){\n    v"]],"start1":92,"start2":92,"length1":16,"length2":23},{"diffs":[[0,"st, "],[-1,"{}"],[1,"options"],[0,");\n "]],"start1":189,"start2":189,"length1":10,"length2":15},{"diffs":[[0,"eClient("],[1,"{}"],[0,");\nexpor"]],"start1":687,"start2":687,"length1":16,"length2":18}]],"length":722,"saved":false}

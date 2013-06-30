@@ -1,2 +1,1 @@
-{"ts":1372552616018,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
-{"contributors":[],"silentsave":false,"ts":1372552623699,"patch":[[{"diffs":[[1,"module.exports = {\n    redisHost: \"slimehead.redistogo.com\",\n    redisPort: \"9285\",\n    redisAuthentication: \"202ce927a499e2238aaaa95b1430d956\"\n};"]],"start1":0,"start2":0,"length1":0,"length2":146}]],"length":146,"saved":false}
+{"ts":1372626466318,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"module.exports = {\n    redisHost: \"slimehead.redistogo.com\",\n    redisPort: \"9285\",\n    redisAuthentication: \"202ce927a499e2238aaaa95b1430d956\"\n};"]],"start1":0,"start2":0,"length1":0,"length2":146}]],"length":146}
