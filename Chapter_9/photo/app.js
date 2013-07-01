@@ -31,6 +31,7 @@ app.configure('development', function(){
 });
 
 app.get('/', photos.list);
+app.get('/photo/:id/download', photos.download(app.get('photos')));
 app.get('/upload', photos.form);
 app.post('/upload', photos.submit(app.get('photos')));
 // app.get('/', routes.index);

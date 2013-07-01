@@ -56,3 +56,16 @@ exports.submit = function (dir) {
         
     };
 };
+exports.download = function(dir) {
+  return function(req, res, next) {
+      var id = req.params.id;
+      Photo.findById(id, function(err, photo){
+          if(err){return next(err);}
+          else {
+              var path = join(dir, photo.path);
+              res.download(path, photo.name);
+//              res.sendfile(path);
+          }
+      });
+  };
+};
