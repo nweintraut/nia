@@ -1,0 +1,3 @@
+{"ts":1372634275009,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1372634289070,"patch":[[{"diffs":[[1,"var mongoose = require('mongoose');\nrequire('../db_connections/mongodb_connection');"]],"start1":0,"start2":0,"length1":0,"length2":84}]],"length":84,"saved":false}
+{"ts":1372634379739,"patch":[[{"diffs":[[0,"ction');"],[1,"\n\nvar schema = new mongoose.Schema({\n    name: String,\n    path: String\n});\nmodule.exports = mongoose.model('Photo', schema);"]],"start1":76,"start2":76,"length1":8,"length2":133}]],"length":209,"saved":false}
